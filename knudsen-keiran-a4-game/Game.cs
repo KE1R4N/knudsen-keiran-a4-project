@@ -24,6 +24,13 @@ namespace MohawkGame2D
         public void Update()
         {
             Window.ClearBackground("#1f304a");
+
+            Draw.SetLineSize(0);
+            Draw.SetFillColor("#332e22");
+            Draw.Rectangle(0, 350, Window.Width, 350);
+
+            Draw.SetFillColor("#ebeffa");
+            Draw.Circle(650, 50, 70);
         }
     }
 
