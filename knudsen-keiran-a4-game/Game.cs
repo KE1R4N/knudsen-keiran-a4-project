@@ -11,6 +11,9 @@ namespace MohawkGame2D
     public class Game
     {
         Hero hero = new Hero();
+        Zombie zombie = new Zombie();
+
+        Vampire vampire = new Vampire();
         public void Setup()
         {
             Window.SetSize(800, 600);
@@ -41,6 +44,8 @@ namespace MohawkGame2D
 
             
             hero.Update();
+            zombie.Update();
+            vampire.Update();
         }
 
 
