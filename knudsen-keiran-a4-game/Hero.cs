@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Text;
 
 namespace MohawkGame2D
 {
     public class Hero
     {
-        float positionX;
-        float positionY;
+        //Vector2 positionX = new Vector2(50);
+        //Vector2 positionY = new Vector2(420);
+        Vector2 position = new Vector2(50, 420);
         public void Setup()
         {
 
@@ -15,31 +17,31 @@ namespace MohawkGame2D
 
         public void Update()
         {
-            float inputX = 0;
-            float inputY = 0;
+            Vector2 input = new Vector2(0 ,0);
+                        
 
             if (Input.IsKeyboardKeyDown(KeyboardKey.Up) || Input.IsKeyboardKeyDown(KeyboardKey.W))
             {
-                inputY -= 1;
+                input.Y = -1;
             }
-
             if(Input.IsKeyboardKeyDown(KeyboardKey.Down) || Input.IsKeyboardKeyDown(KeyboardKey.S))
             {
-                inputY += 1;
+                input.Y = 1;
             }
 
             if (Input.IsKeyboardKeyDown(KeyboardKey.Left) || Input.IsKeyboardKeyDown(KeyboardKey.A))
             {
-                inputX -= 1;
+                input.X = -1;
             }
-
             if (Input.IsKeyboardKeyDown(KeyboardKey.Right) || Input.IsKeyboardKeyDown(KeyboardKey.D))
             {
-                inputX += 1;
+                input.X = 1;
             }
 
-            positionX += inputX * 100 * Time.DeltaTime;
-            positionY += inputY * 100 * Time.DeltaTime;
+
+            //positionX = input.X * 150f * Time.DeltaTime;
+            //positionY = input.Y * 150f * Time.DeltaTime;
+            position += input * 150 * Time.DeltaTime;
 
             DrawHero();
 
@@ -47,8 +49,10 @@ namespace MohawkGame2D
 
         public void DrawHero()
         {
+
             Draw.SetFillColor(Color.Blue);
-            Draw.Rectangle(50, 420, 40, 60);
+            Draw.Circle(position, 20);
+            //Draw.Rectangle(positionX, positionY, 40, 60);
         }
     }
 

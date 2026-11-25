@@ -14,6 +14,7 @@ namespace MohawkGame2D
         public void Setup()
         {
             Window.SetSize(800, 600);
+            Window.SetTitle("Creature Feature");
         }
 
         /// <summary>
@@ -38,7 +39,8 @@ namespace MohawkGame2D
             Draw.SetFillColor("#ebeffa");
             Draw.Circle(650, 50, 70);
 
-            hero.DrawHero();
+            
+            hero.Update();
         }
 
 
