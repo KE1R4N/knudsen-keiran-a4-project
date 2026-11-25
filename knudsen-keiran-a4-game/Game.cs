@@ -10,9 +10,7 @@ namespace MohawkGame2D
     /// </summary>
     public class Game
     {
-        /// <summary>
-        ///     Setup runs once before the game loop begins.
-        /// </summary>
+        Hero hero = new Hero();
         public void Setup()
         {
             Window.SetSize(800, 600);
@@ -25,13 +23,25 @@ namespace MohawkGame2D
         {
             Window.ClearBackground("#1f304a");
 
+            //for (int i = 0; i < 3; i++)
+            //{
+            //    int x = i * 60;
+            //    Draw.SetFillColor(Color.Gray);
+            //    Draw.Rectangle(x + 100, 300, 50, 70);
+            //}
+            //might to gravestones
+
             Draw.SetLineSize(0);
             Draw.SetFillColor("#332e22");
             Draw.Rectangle(0, 350, Window.Width, 350);
 
             Draw.SetFillColor("#ebeffa");
             Draw.Circle(650, 50, 70);
+
+            hero.DrawHero();
         }
+
+
     }
 
 }
