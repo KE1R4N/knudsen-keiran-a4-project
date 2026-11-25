@@ -14,10 +14,19 @@ namespace MohawkGame2D
         Zombie zombie = new Zombie();
 
         Vampire vampire = new Vampire();
+
+        Zombie[] zombies;
         public void Setup()
         {
             Window.SetSize(800, 600);
             Window.SetTitle("Creature Feature");
+
+            zombies = new Zombie[5];
+
+            for (int i = 0; i < zombies.Length; i++)
+            {
+                zombies[i] = new Zombie();
+            }
         }
 
         /// <summary>
@@ -44,6 +53,8 @@ namespace MohawkGame2D
 
             
             hero.Update();
+
+            
             zombie.Update();
             vampire.Update();
         }
